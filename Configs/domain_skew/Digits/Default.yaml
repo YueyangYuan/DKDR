@@ -1,0 +1,21 @@
+DATASET:
+  dataset : "Digits"
+  communication_epoch : 100
+  n_classes: 10
+  parti_num: 10
+  online_ratio: 1.0
+  domain_ratio: 0.2
+  train_eval_domain_ratio: 0.1
+  backbone: "fedavg_cifar" # simple_cnn resnet18_pretrained resnet18
+  pretrained: False # True False
+  aug: "weak"
+
+OPTIMIZER:
+  type: 'SGD'
+  momentum: 0.9
+  weight_decay: 1e-5
+  local_epoch: 5 # 10
+  local_train_batch: 50
+  local_test_batch: 16
+  val_batch: 16
+  local_train_lr: 0.001 # 0.01
