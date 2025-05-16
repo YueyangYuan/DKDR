@@ -1,4 +1,4 @@
-<img center src="./assert/Framework.jpg" width = "700" alt="Architecture of DKDR.">
+<img center src="Frame.pdf" width = "700" alt="Architecture of DKDR.">
 </p>
 
 <h1 align="center">DKDR </h1>
