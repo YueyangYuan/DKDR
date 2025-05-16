@@ -1,4 +1,5 @@
-<img center src="Frame.pdf" width = "700" alt="Architecture of DKDR.">
+<p align="center">
+<img center src="frame_nips2_00.png" width = "700" alt="Architecture of DKDR.">
 </p>
 
 <h1 align="center">DKDR </h1>
