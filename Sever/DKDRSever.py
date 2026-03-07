@@ -32,7 +32,6 @@ class DKDRSever(SeverMethod):
             all_delta = []
             w = []
 
-            # 这里 w 和 all_delta 的顺序是按 online_clients_list 来的
             for client_id in online_clients_list:
                 net_all_delta = []
                 for name, param0 in temp_net.state_dict().items():
