@@ -31,7 +31,6 @@ class DKDRSever(SeverMethod):
         with torch.no_grad():
             all_delta = []
             w = []
-
             for client_id in online_clients_list:
                 net_all_delta = []
                 for name, param0 in temp_net.state_dict().items():
