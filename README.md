@@ -4,7 +4,7 @@
 
 <h1 align="center">DKDR </h1>
 
-<p align="center"><em>DKDR: Dynamic Knowledge Distillation for Reliability in Federated Learning [Link](https://openreview.net/pdf?id=To2fQWv0zP) </strong></p> 
+<p align="center"><em><a href="https://openreview.net/pdf?id=To2fQWv0zP" target="_blank" rel="noopener noreferrer">DKDR: Dynamic Knowledge Distillation for Reliability in Federated Learning </a></p> 
 
 <h2> Abstract </h2>
 Federated Learning (FL) has demonstrated a promising future in privacy-friendly collaboration but it faces the data heterogeneity problem. Knowledge Distillation (KD) can serve as an effective method to address this issue. However, challenges arise from the unreliability of existing distillation methods in multi-domain scenarios.
