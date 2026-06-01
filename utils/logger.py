@@ -19,15 +19,13 @@ class CsvWriter:
         print(self.para_path)
 
     def model_folder_path(self):
-        if self.args.task == 'OOD':
-            model_path = os.path.join(log_path(), self.args.task, self.args.attack_type, self.args.dataset, self.cfg.OOD.out_domain, self.args.averaging,
-                                      self.args.method)
-        else:
-            if self.args.attack_type == 'None':
-                model_path = os.path.join(log_path(), self.args.task, self.args.attack_type, self.args.dataset, self.args.averaging, self.args.method)
-            else:
-                model_path = os.path.join(log_path(), self.args.task, self.cfg.attack[self.args.attack_type].evils,
-                                          self.args.dataset, self.args.averaging, self.args.method)
+        model_path = os.path.join(
+            log_path(),
+            self.args.task,
+            self.args.dataset,
+            self.args.averaging,
+            self.args.method,
+        )
         create_if_not_exists(model_path)
         return model_path
 

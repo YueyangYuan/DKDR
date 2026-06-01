@@ -1,13 +1,8 @@
-from Aggregations import get_fed_aggregation
 from Methods.utils.meta_methods import FederatedMethod
-
-import copy
-import wandb
 
 
 class DKDR(FederatedMethod):
     NAME = 'DKDR'
-    COMPATIBILITY = ['homogeneity']
 
     def __init__(self, nets_list, client_domain_list, args, cfg):
         super(DKDR, self).__init__(nets_list, client_domain_list, args, cfg)

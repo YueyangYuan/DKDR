@@ -1,23 +1,31 @@
+# DKDR: Dynamic Knowledge Distillation for Reliability in Federated Learning
 
-<h1 align="center">DKDR: Dynamic Knowledge Distillation for Reliability in Federated Learning</h1>
+[Paper link](https://openreview.net/pdf?id=To2fQWv0zP)
 
-<p align="center"><em><a href="https://openreview.net/pdf?id=To2fQWv0zP" target="_blank" rel="noopener noreferrer">DKDR: Dynamic Knowledge Distillation for Reliability in Federated Learning </a></p> 
+This repository contains a simplified public release of DKDR that matches the method structure and experiment scope described in the NeurIPS 2025 paper.
 
-<p align="center"><em>Yueyang Yuan&dagger;, Wenke Huang&dagger;, Guancheng Wan, Kaiqi Guan, He Li, Mang Ye*</em></p>
+## Supported scope
 
-<h2>🙌 Abstract </h2>
-Federated Learning (FL) has demonstrated a promising future in privacy-friendly collaboration but it faces the data heterogeneity problem. Knowledge Distillation (KD) can serve as an effective method to address this issue. However, challenges arise from the unreliability of existing distillation methods in multi-domain scenarios.
-Prevalent distillation solutions primarily aim to fit the distributions of the global model directly by minimizing forward Kullback-Leibler divergence (KLD). This results in significant bias when the outputs of the global model are multi-peaked, which indicates the unreliability of distillation pathway. Meanwhile, cross-domain update conflicts can notably reduce the accuracy of the global model (teacher model) in certain domains, reflecting the unreliability of the teacher model in these domains.
-In this work, we propose DKDR (Dynamic Knowledge Distillation for Reliability in Federated Learning), which dynamically assigns weights to forward and reverse KLD based on knowledge discrepancies. This enables clients to fit the outputs from the teacher precisely. Moreover, we use knowledge decoupling to identify domain experts, thus clients can acquire reliable domain knowledge from experts. Empirical results from single-domain and multi-domain image classification tasks demonstrate the effectiveness of the proposed method and the efficiency of its key modules.
+- Methods: `DKDR`, `FedAVG`
+- Settings: `label_skew`, `domain_skew`
+- Single-domain datasets: `fl_cifar10`, `fl_cifar100`
+- Multi-domain datasets: `Office31`, `OfficeHome`
+- Backbones: `fedavg_cifar`, `resnet10`, `resnet18`
 
-<h2>📖 Overview </h2>
-<p align="center">
-<img center src="frame_nips2_00.png" width = "1000" alt="Architecture of DKDR.">
-</p>
+The public repository intentionally removes unrelated attack pipelines, OOD branches, extra dataset variants, and cached artifacts so that the code path stays aligned with the paper.
 
-<h2 id="citation"> 🥳 Citation </h2>
+## Example usage
 
-If our research or code assists your work, kindly cite our paper as follows::
+```bash
+python main.py --task label_skew --dataset fl_cifar10 --method DKDR
+python main.py --task domain_skew --dataset Office31 --method DKDR
+```
+
+## Overview
+
+![Architecture of DKDR.](frame_nips2_00.png)
+
+## Citation
 
 ```bibtex
 @inproceedings{DKDR_NeurIPS25,

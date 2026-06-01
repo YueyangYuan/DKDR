@@ -34,11 +34,7 @@ class FederatedMethod(nn.Module):
 
         self.local_model = get_local_method(args, cfg)
         self.sever_model = get_sever_method(args, cfg)
-
-        if args.structure == 'homogeneity':
-            self.fed_aggregation = get_fed_aggregation(args)
-        else:
-            self.fed_aggregation = None
+        self.fed_aggregation = get_fed_aggregation(args)
 
         self.epoch_index = 0
         self.random_net = copy.deepcopy(self.nets_list[0]).to(self.device)
@@ -56,13 +52,12 @@ class FederatedMethod(nn.Module):
         return
 
     def ini(self):
-        if self.args.structure == 'homogeneity':
-            self.global_net = copy.deepcopy(self.nets_list[0])
-            self.global_net = self.global_net.to(self.device)
+        self.global_net = copy.deepcopy(self.nets_list[0])
+        self.global_net = self.global_net.to(self.device)
 
-            global_w = self.nets_list[0].state_dict()
-            for _, net in enumerate(self.nets_list):
-                net.load_state_dict(global_w)
+        global_w = self.nets_list[0].state_dict()
+        for _, net in enumerate(self.nets_list):
+            net.load_state_dict(global_w)
 
     def col_update(self, publoader):
         pass
